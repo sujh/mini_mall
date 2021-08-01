@@ -1,0 +1,15 @@
+.panel.panel-default
+  .panel-heading This is a panel heading
+
+  table.table
+    thead
+      tr 
+        td #
+        td name
+        td price
+    tbody
+      - @commodities.each_with_index do |c, idx|
+        tr
+          td = idx
+          td = link_to c.name, console_commodity_path(c.id)
+          td = c.price
